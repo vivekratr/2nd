@@ -156,6 +156,35 @@ tailwind.config = {
   /* ── Pulse dot ── */
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.45;}}
   .pulse-dot{animation:pulse 2.2s ease-in-out infinite;}
+
+  /* ── Navbar: glass + scroll hide ── */
+  .site-nav{
+    transition:transform 0.42s cubic-bezier(0.4,0,0.2,1);
+    will-change:transform;
+  }
+  .site-nav.nav-hidden{
+    transform:translateY(calc(-100% - 1.75rem));
+    pointer-events:none;
+  }
+  #nav-panel{
+    transition:background-color 0.35s ease,border-color 0.35s ease,box-shadow 0.35s ease,
+      backdrop-filter 0.35s ease,-webkit-backdrop-filter 0.35s ease;
+    -webkit-backdrop-filter:blur(20px) saturate(1.35);
+    backdrop-filter:blur(20px) saturate(1.35);
+    background:rgba(255,255,255,0.14);
+    border:1px solid rgba(255,255,255,0.38);
+    box-shadow:0 8px 32px rgba(9,24,51,0.12),0 2px 12px rgba(9,24,51,0.06),inset 0 1px 0 rgba(255,255,255,0.22);
+  }
+  .site-nav.is-past-hero #nav-panel{
+    background:rgba(255,255,255,0.78);
+    border:1px solid rgba(255,255,255,0.65);
+    box-shadow:0 8px 32px rgba(9,24,51,0.08),0 2px 8px rgba(9,24,51,0.04),inset 0 1px 0 rgba(255,255,255,0.9);
+  }
+  .site-nav .nav-brand-title,.site-nav .nav-brand-sub{transition:color 0.35s ease;}
+  .site-nav .nav-brand-title{color:#fff;}
+  .site-nav .nav-brand-sub{color:rgba(255,255,255,0.72);}
+  .site-nav.is-past-hero .nav-brand-title{color:#091833;}
+  .site-nav.is-past-hero .nav-brand-sub{color:#737373;}
 </style>
 </head>
 <body class="font-body bg-background-50 text-neutral-600 antialiased" style="height:auto;min-height:100%;">
@@ -163,13 +192,13 @@ tailwind.config = {
 <!-- ═══════════════════════════════════════════════════
      NAVBAR
 ═══════════════════════════════════════════════════ -->
-<nav class="fixed top-5 left-0 right-0 z-50 px-4 md:px-6">
-  <div class="max-w-7xl mx-auto bg-white/90 backdrop-blur-2xl shadow-brand-md rounded-2xl h-[76px] flex items-center justify-between px-8 md:px-12">
+<nav id="site-nav" class="site-nav fixed top-5 left-0 right-0 z-50 px-4 md:px-6" aria-label="Primary">
+  <div id="nav-panel" class="max-w-7xl mx-auto rounded-2xl h-[76px] flex items-center justify-between px-8 md:px-12">
     <a href="#" class="flex items-center gap-3.5 group">
       <div class="w-10 h-10 bg-navy-900 rounded-2xl flex items-center justify-center text-white font-black text-lg shadow-brand-sm group-hover:scale-105 transition-transform duration-300">B</div>
       <div class="flex flex-col">
-        <span class="font-heading font-black text-navy-900 leading-none text-[18px]" style="letter-spacing:-0.02em;">BHAKTI</span>
-        <span class="font-body text-neutral-400 text-[10px] tracking-[0.20em] uppercase leading-none mt-1">Enterprises</span>
+        <span class="nav-brand-title font-heading font-black leading-none text-[18px]" style="letter-spacing:-0.02em;">BHAKTI</span>
+        <span class="nav-brand-sub font-body text-[10px] tracking-[0.20em] uppercase leading-none mt-1">Enterprises</span>
       </div>
     </a>
     <a href="#quote-form" class="cta-btn bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm h-11 px-7 rounded-small shadow-brand-sm hover:shadow-brand-md hover:-translate-y-0.5 transition-all duration-250 flex items-center gap-2">
@@ -182,7 +211,7 @@ tailwind.config = {
 <!-- ═══════════════════════════════════════════════════
      1. HERO
 ═══════════════════════════════════════════════════ -->
-<section class="relative overflow-hidden" style="background:linear-gradient(150deg,#071222 0%,#0D2254 38%,#0d3070 70%,#0a4a8a 100%);padding-top:196px;padding-bottom:172px;">
+<section id="site-hero" class="relative overflow-hidden" style="background:linear-gradient(150deg,#071222 0%,#0D2254 38%,#0d3070 70%,#0a4a8a 100%);padding-top:196px;padding-bottom:172px;">
   <!-- Ambient glows -->
   <div class="absolute pointer-events-none" style="top:-18%;right:-8%;width:900px;height:900px;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 62%);border-radius:50%;"></div>
   <div class="absolute pointer-events-none" style="bottom:-22%;left:-10%;width:750px;height:750px;background:radial-gradient(circle,rgba(143,212,58,0.055) 0%,transparent 62%);border-radius:50%;"></div>
@@ -545,6 +574,47 @@ tailwind.config = {
   setTimeout(() => { showTip(); tooltipTimer = setTimeout(hideTip, 4500); }, 3200);
   waBtn.addEventListener('mouseenter', () => { clearTimeout(tooltipTimer); showTip(); });
   waBtn.addEventListener('mouseleave', () => { tooltipTimer = setTimeout(hideTip, 900); });
+
+  (function () {
+    var nav = document.getElementById('site-nav');
+    var hero = document.getElementById('site-hero');
+    if (!nav) return;
+
+    var lastY = window.scrollY;
+    var ticking = false;
+    var delta = 8;
+    var heroThreshold = 88;
+
+    function syncPastHero() {
+      if (!hero) return;
+      nav.classList.toggle('is-past-hero', hero.getBoundingClientRect().bottom < heroThreshold);
+    }
+
+    function onScrollFrame() {
+      ticking = false;
+      var y = window.scrollY;
+      if (y < 48) {
+        nav.classList.remove('nav-hidden');
+      } else if (y > lastY + delta) {
+        nav.classList.add('nav-hidden');
+      } else if (y < lastY - delta) {
+        nav.classList.remove('nav-hidden');
+      }
+      lastY = y;
+      syncPastHero();
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(onScrollFrame);
+        ticking = true;
+      }
+    }
+
+    syncPastHero();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', syncPastHero);
+  })();
 </script>
 </body>
 </html>

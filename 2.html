@@ -1,7 +1,9 @@
 <div
   class="export-wrapper"
   style="
-    width: 1440px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     min-height: 812px;
     position: relative;
     font-family: var(--font-family-body);
@@ -733,6 +735,170 @@
           border: 4px solid var(--white);
           color: var(--white);
           cursor: pointer;
+        }
+      </style>
+
+      <style id="responsive-large-screens">
+        @media (min-width: 1536px) {
+          .container {
+            max-width: 1440px;
+            padding: 0 48px;
+          }
+          h1 {
+            font-size: 72px;
+            line-height: 1.04;
+          }
+          h2 {
+            font-size: 52px;
+            line-height: 1.12;
+          }
+          h3 {
+            font-size: 26px;
+          }
+          .hero {
+            padding: 120px 0 160px;
+          }
+          .hero-container {
+            gap: 80px;
+          }
+          .hero-visual {
+            height: clamp(640px, 42vw, 780px);
+          }
+          .hero-sub {
+            max-width: 640px;
+            font-size: 24px;
+          }
+          .logo {
+            font-size: 26px;
+            gap: 16px;
+          }
+          .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+          }
+          .pain-solution,
+          .products,
+          .why-us,
+          .testimonials,
+          .cta-section {
+            padding: 160px 0;
+          }
+          .ps-grid {
+            gap: 56px;
+          }
+          .ps-card {
+            padding: 80px 72px;
+          }
+          .product-grid,
+          .why-grid {
+            gap: 40px;
+          }
+          .testimonial-grid {
+            gap: 48px;
+          }
+          .section-header {
+            max-width: 760px;
+            margin-bottom: 96px;
+          }
+          .section-header p {
+            font-size: 24px;
+          }
+          .cta-grid {
+            gap: 96px;
+          }
+          .cta-content h2 {
+            font-size: 62px;
+          }
+          .footer {
+            padding: 120px 0 48px;
+          }
+        }
+
+        @media (min-width: 1920px) {
+          .container {
+            max-width: 1680px;
+            padding: 0 64px;
+          }
+          h1 {
+            font-size: 76px;
+          }
+          h2 {
+            font-size: 56px;
+          }
+          h3 {
+            font-size: 28px;
+          }
+          .hero {
+            padding: 128px 0 176px;
+          }
+          .hero-container {
+            gap: 96px;
+          }
+          .hero-visual {
+            height: clamp(700px, 38vw, 860px);
+          }
+          .hero-sub {
+            max-width: 720px;
+            font-size: 25px;
+          }
+          .logo {
+            font-size: 28px;
+          }
+          .logo-icon {
+            width: 44px;
+            height: 44px;
+          }
+          .pain-solution,
+          .products,
+          .why-us,
+          .testimonials,
+          .cta-section {
+            padding: 180px 0;
+          }
+          .ps-grid {
+            gap: 64px;
+          }
+          .ps-card {
+            padding: 88px 80px;
+          }
+          .product-grid,
+          .why-grid {
+            gap: 48px;
+          }
+          .testimonial-grid {
+            gap: 56px;
+          }
+          .section-header {
+            max-width: 820px;
+            margin-bottom: 104px;
+          }
+          .section-header p {
+            font-size: 25px;
+          }
+          .cta-grid {
+            gap: 112px;
+          }
+          .cta-content h2 {
+            font-size: 68px;
+          }
+          .form-card {
+            padding: 64px;
+          }
+          .footer {
+            padding: 128px 0 52px;
+          }
+        }
+
+        @media (min-width: 2560px) {
+          .container {
+            max-width: 1920px;
+            padding: 0 80px;
+          }
+          .hero-glow {
+            width: min(1200px, 70vw);
+            height: min(1200px, 70vw);
+          }
         }
       </style>
 
