@@ -1,0 +1,1467 @@
+<div
+  class="export-wrapper"
+  style="
+    width: 1440px;
+    min-height: 812px;
+    position: relative;
+    font-family: var(--font-family-body);
+    background-color: var(--background);
+  "
+>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&family=Geist:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=PT+Serif:wght@400;700&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Shantell+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bhakti Enterprises | B2B Campaign</title>
+
+      <style id="base-styles">
+        * {
+          box-sizing: border-box;
+        }
+        .export-wrapper {
+          margin: 0;
+          font-family:
+            "Inter",
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            sans-serif;
+          background-color: var(--white);
+          color: var(--navy);
+          line-height: 1.6;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        :root {
+          --navy: #0f1b4a;
+          --navy-dark: #0a1233;
+          --green: #a8e063;
+          --blue: #0ea5e9;
+          --blue-light: #e0f2fe;
+          --white: #ffffff;
+          --gray-50: #f8fafc;
+          --gray-100: #f1f5f9;
+          --gray-200: #e2e8f0;
+          --gray-600: #475569;
+          --gray-900: #0f172a;
+
+          --radius-sm: 8px;
+          --radius-md: 16px;
+          --radius-lg: 24px;
+          --radius-full: 9999px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+          margin: 0;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          color: var(--navy);
+        }
+        h1 {
+          font-size: 64px;
+          line-height: 1.05;
+        }
+        h2 {
+          font-size: 48px;
+          line-height: 1.15;
+        }
+        h3 {
+          font-size: 24px;
+          line-height: 1.3;
+        }
+
+        p {
+          margin: 0;
+          color: var(--gray-600);
+        }
+
+        .container {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 40px;
+          width: 100%;
+        }
+
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          border-radius: var(--radius-full);
+          font-weight: 700;
+          font-size: 16px;
+          cursor: pointer;
+          white-space: nowrap;
+          border: none;
+          text-decoration: none;
+          padding: 18px 36px;
+        }
+        .btn-primary {
+          background-color: var(--green);
+          color: var(--navy);
+          box-shadow: 0 16px 32px -12px rgba(168, 224, 99, 0.6);
+        }
+        .btn-secondary {
+          background-color: var(--blue);
+          color: var(--white);
+          box-shadow: 0 16px 32px -12px rgba(14, 165, 233, 0.5);
+        }
+        .btn-outline {
+          background-color: transparent;
+          border: 2px solid var(--gray-200);
+          color: var(--navy);
+          padding: 16px 34px;
+        }
+        .btn-sm {
+          padding: 12px 28px;
+          font-size: 15px;
+        }
+
+        .section-divider {
+          height: 1px;
+          background-color: var(--blue-light);
+          width: 100%;
+        }
+      </style>
+
+      <style id="navbar-styles">
+        .navbar {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background-color: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border-bottom: 1px solid var(--blue-light);
+          height: 88px;
+          display: flex;
+          align-items: center;
+        }
+        .navbar .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 24px;
+          font-weight: 800;
+          color: var(--navy);
+          letter-spacing: -0.03em;
+          text-decoration: none;
+        }
+        .logo-icon {
+          width: 36px;
+          height: 36px;
+          background: var(--navy);
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--white);
+        }
+      </style>
+
+      <style id="hero-styles">
+        .hero {
+          padding: 100px 0 140px;
+          background: var(--white);
+          position: relative;
+          overflow: hidden;
+        }
+        .hero-glow {
+          position: absolute;
+          top: -20%;
+          right: -10%;
+          width: 1000px;
+          height: 1000px;
+          background: radial-gradient(
+            circle,
+            rgba(14, 165, 233, 0.08) 0%,
+            rgba(255, 255, 255, 0) 60%
+          );
+          pointer-events: none;
+          z-index: 0;
+        }
+        .hero-container {
+          display: grid;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 64px;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+        }
+        .hero-eyebrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--blue);
+          font-size: 14px;
+          font-weight: 800;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          margin-bottom: 32px;
+          padding: 8px 16px;
+          background: var(--blue-light);
+          border-radius: var(--radius-full);
+        }
+        .hero-sub {
+          font-size: 22px;
+          line-height: 1.6;
+          margin: 32px 0 48px;
+          max-width: 580px;
+        }
+        .hero-actions {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 48px;
+        }
+        .trust-pills {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+        .trust-pill {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 15px;
+          font-weight: 600;
+          color: var(--gray-600);
+        }
+        .hero-visual {
+          position: relative;
+          height: 680px;
+          border-radius: 32px;
+          background: var(--navy);
+          box-shadow: 0 40px 80px -20px rgba(15, 27, 74, 0.25);
+          overflow: hidden;
+        }
+        .hero-visual-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.95;
+        }
+        .hero-visual-halo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 120%;
+          height: 120%;
+          background: radial-gradient(
+            circle,
+            rgba(14, 165, 233, 0.4) 0%,
+            transparent 60%
+          );
+          pointer-events: none;
+        }
+        .hero-glass-card {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          right: 40px;
+          background: rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(32px);
+          -webkit-backdrop-filter: blur(32px);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-radius: 24px;
+          padding: 28px;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+      </style>
+
+      <style id="trust-bar-styles">
+        .trust-bar {
+          background: var(--navy);
+          padding: 32px 0;
+        }
+        .trust-bar-grid {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .tb-item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          color: var(--white);
+          font-weight: 600;
+          font-size: 17px;
+        }
+        .tb-divider {
+          width: 1px;
+          height: 32px;
+          background: rgba(255, 255, 255, 0.15);
+        }
+        .tb-icon {
+          color: var(--blue);
+        }
+      </style>
+
+      <style id="pain-solution-styles">
+        .pain-solution {
+          padding: 140px 0;
+          background: var(--gray-50);
+        }
+        .ps-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 48px;
+        }
+        .ps-card {
+          background: var(--white);
+          border-radius: 32px;
+          padding: 72px 64px;
+          box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.03);
+          border: 1px solid var(--gray-100);
+        }
+        .ps-card.solution {
+          background: #fcfff8;
+          border: 2px solid rgba(168, 224, 99, 0.4);
+          box-shadow: 0 32px 64px -16px rgba(168, 224, 99, 0.15);
+          position: relative;
+          overflow: hidden;
+        }
+        .ps-card.solution::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            circle at top right,
+            rgba(168, 224, 99, 0.15) 0%,
+            transparent 60%
+          );
+          pointer-events: none;
+        }
+        .ps-list {
+          list-style: none;
+          padding: 0;
+          margin: 56px 0 0;
+          display: flex;
+          flex-direction: column;
+          gap: 36px;
+          position: relative;
+          z-index: 1;
+        }
+        .ps-item {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--navy);
+        }
+        .ps-icon-wrap {
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .ps-red .ps-icon-wrap {
+          background: rgba(239, 68, 68, 0.1);
+          color: #ef4444;
+        }
+        .ps-green .ps-icon-wrap {
+          background: rgba(168, 224, 99, 0.2);
+          color: #4d7c0f;
+        }
+      </style>
+
+      <style id="products-styles">
+        .products {
+          padding: 140px 0;
+          background: var(--white);
+        }
+        .section-header {
+          text-align: center;
+          max-width: 680px;
+          margin: 0 auto 80px;
+        }
+        .section-header p {
+          font-size: 22px;
+          margin-top: 24px;
+        }
+        .product-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 32px;
+        }
+        .product-card {
+          background: rgba(240, 247, 255, 0.4);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid var(--blue-light);
+          border-radius: 28px;
+          padding: 40px 32px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 20px 40px -20px rgba(14, 165, 233, 0.05);
+        }
+        .product-icon {
+          width: 72px;
+          height: 72px;
+          background: var(--white);
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--blue);
+          margin-bottom: 32px;
+          box-shadow: 0 8px 24px -8px rgba(14, 165, 233, 0.15);
+        }
+        .product-badge {
+          display: inline-flex;
+          background: var(--white);
+          border: 1px solid var(--blue-light);
+          padding: 8px 16px;
+          border-radius: var(--radius-full);
+          font-size: 14px;
+          font-weight: 700;
+          color: var(--navy);
+          margin: 16px 0 48px;
+        }
+        .product-btn {
+          margin-top: auto;
+          width: 100%;
+          padding: 14px;
+          background: transparent;
+          border: 2px solid var(--gray-200);
+          border-radius: var(--radius-full);
+          font-weight: 700;
+          color: var(--navy);
+          font-size: 15px;
+          text-align: center;
+          cursor: pointer;
+        }
+      </style>
+
+      <style id="why-us-styles">
+        .why-us {
+          padding: 140px 0;
+          background: linear-gradient(
+            135deg,
+            var(--navy) 0%,
+            var(--navy-dark) 100%
+          );
+          position: relative;
+          overflow: hidden;
+        }
+        .why-us::before {
+          content: "";
+          position: absolute;
+          top: -50%;
+          left: -20%;
+          width: 140%;
+          height: 200%;
+          background: radial-gradient(
+            circle,
+            rgba(14, 165, 233, 0.15) 0%,
+            transparent 60%
+          );
+          pointer-events: none;
+        }
+        .why-us h2 {
+          color: var(--white);
+        }
+        .why-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 32px;
+        }
+        .why-card {
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(32px);
+          -webkit-backdrop-filter: blur(32px);
+          border-radius: 28px;
+          padding: 48px 32px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 32px;
+          box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+        }
+        .why-icon {
+          width: 88px;
+          height: 88px;
+          border-radius: 24px;
+          background: rgba(14, 165, 233, 0.1);
+          border: 1px solid rgba(14, 165, 233, 0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--blue);
+        }
+        .why-card h3 {
+          color: var(--white);
+          font-size: 20px;
+        }
+      </style>
+
+      <style id="testimonials-styles">
+        .testimonials {
+          padding: 140px 0;
+          background: var(--gray-50);
+        }
+        .testimonial-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+        }
+        .testimonial-card {
+          background: var(--white);
+          border-radius: 32px;
+          padding: 56px 48px;
+          box-shadow: 0 24px 48px -12px rgba(15, 27, 74, 0.04);
+          border: 1px solid var(--gray-100);
+          position: relative;
+        }
+        .t-quote-mark {
+          position: absolute;
+          top: 56px;
+          right: 48px;
+          color: rgba(168, 224, 99, 0.25);
+        }
+        .t-stars {
+          display: flex;
+          gap: 6px;
+          margin-bottom: 32px;
+          color: #fbbf24;
+        }
+        .t-text {
+          font-size: 18px;
+          line-height: 1.7;
+          color: var(--navy);
+          font-weight: 600;
+          margin-bottom: 48px;
+          min-height: 120px;
+        }
+        .t-author {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+        .t-avatar {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid var(--gray-100);
+        }
+        .t-name {
+          font-weight: 800;
+          font-size: 18px;
+          color: var(--navy);
+        }
+        .t-role {
+          font-size: 15px;
+          color: var(--gray-600);
+          margin-top: 4px;
+          font-weight: 500;
+        }
+      </style>
+
+      <style id="lead-form-styles">
+        .cta-section {
+          padding: 140px 0;
+          background: var(--navy);
+          position: relative;
+        }
+        .cta-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: center;
+        }
+        .cta-content h2 {
+          color: var(--white);
+          font-size: 56px;
+          margin-bottom: 48px;
+        }
+        .cta-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 28px;
+        }
+        .cta-list li {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          font-size: 20px;
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.9);
+        }
+        .cta-list-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: rgba(168, 224, 99, 0.2);
+          color: var(--green);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .form-card {
+          background: var(--white);
+          border-radius: 32px;
+          padding: 56px;
+          box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+        }
+        .form-group {
+          margin-bottom: 24px;
+        }
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+        }
+        .form-label {
+          display: block;
+          font-size: 15px;
+          font-weight: 800;
+          color: var(--navy);
+          margin-bottom: 12px;
+        }
+        .form-input {
+          width: 100%;
+          height: 64px;
+          background: var(--gray-50);
+          border: 1px solid var(--gray-200);
+          border-radius: 16px;
+          padding: 0 24px;
+          font-size: 16px;
+          font-family: inherit;
+          color: var(--gray-600);
+          display: flex;
+          align-items: center;
+        }
+        .form-select {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230f1b4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 24px center;
+          color: var(--navy);
+        }
+        .form-submit {
+          margin-top: 32px;
+          width: 100%;
+          padding: 22px;
+          font-size: 18px;
+        }
+      </style>
+
+      <style id="footer-styles">
+        .footer {
+          background: var(--gray-900);
+          padding: 100px 0 40px;
+          color: rgba(255, 255, 255, 0.6);
+        }
+        .footer-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 80px;
+        }
+        .footer-brand .logo-icon {
+          background: var(--white);
+          color: var(--gray-900);
+        }
+        .footer-brand .logo {
+          color: var(--white);
+          margin-bottom: 24px;
+        }
+        .footer-address {
+          font-size: 16px;
+          line-height: 1.8;
+          max-width: 320px;
+        }
+        .footer-actions {
+          display: flex;
+          gap: 16px;
+        }
+        .footer-bottom {
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+        }
+      </style>
+
+      <style id="fab-styles">
+        .fab-wrap {
+          position: fixed;
+          bottom: 40px;
+          right: 40px;
+          z-index: 100;
+        }
+        .fab {
+          width: 72px;
+          height: 72px;
+          background: #25d366;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow:
+            0 16px 32px rgba(37, 211, 102, 0.4),
+            0 0 0 8px rgba(37, 211, 102, 0.1);
+          border: 4px solid var(--white);
+          color: var(--white);
+          cursor: pointer;
+        }
+      </style>
+
+      <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+      <!-- 1. NAVBAR -->
+      <nav class="navbar">
+        <div class="container">
+          <a href="#" class="logo" data-media-type="banani-button">
+            <div class="logo-icon">
+              <iconify-icon
+                icon="lucide:hexagon"
+                style="font-size: 20px"
+              ></iconify-icon>
+            </div>
+            Bhakti Enterprises
+          </a>
+          <div data-media-type="banani-button" class="btn btn-primary btn-sm">
+            Get Bulk Quote
+          </div>
+        </div>
+      </nav>
+
+      <!-- 2. HERO SECTION -->
+      <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <iconify-icon
+                icon="lucide:shield-check"
+                style="font-size: 16px"
+              ></iconify-icon>
+              Trusted Since 1985 · 14,000+ Clients Across India
+            </div>
+            <h1>
+              India's Most Reliable Source for OPC Drums &amp; Toner Cartridges
+            </h1>
+            <p class="hero-sub">
+              Quality-tested. Flexibly MOQd. Dispatched in 48hrs — for
+              distributors, resellers &amp; service centers.
+            </p>
+            <div class="hero-actions">
+              <div data-media-type="banani-button" class="btn btn-primary">
+                Request Bulk Quote
+              </div>
+              <div data-media-type="banani-button" class="btn btn-secondary">
+                <iconify-icon
+                  icon="lucide:message-circle"
+                  style="font-size: 20px"
+                ></iconify-icon>
+                Chat on WhatsApp
+              </div>
+            </div>
+            <div class="trust-pills">
+              <div class="trust-pill">
+                <iconify-icon
+                  icon="lucide:award"
+                  style="font-size: 20px; color: var(--blue)"
+                ></iconify-icon>
+                ISO Certified
+              </div>
+              <div class="trust-pill">
+                <iconify-icon
+                  icon="lucide:file-text"
+                  style="font-size: 20px; color: var(--blue)"
+                ></iconify-icon>
+                GST Registered
+              </div>
+              <div class="trust-pill">
+                <iconify-icon
+                  icon="lucide:plane"
+                  style="font-size: 20px; color: var(--blue)"
+                ></iconify-icon>
+                Export Ready
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-visual-halo"></div>
+            <img
+              src="https://storage.googleapis.com/banani-generated-images/generated-images/de67b9b6-5f2c-478c-aa67-6c978b0c5b95.jpg"
+              class="hero-visual-img"
+              alt="Abstract Premium Visual"
+              data-query="Premium abstract 3D illustration of OPC drum and toner cartridges, industrial B2B, dark deep navy background, sleek volumetric lighting"
+              data-aspect-ratio="4:5"
+            />
+            <div class="hero-glass-card">
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  border-radius: 16px;
+                  background: var(--green);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-shrink: 0;
+                "
+              >
+                <iconify-icon
+                  icon="lucide:package-check"
+                  style="font-size: 28px; color: var(--navy)"
+                ></iconify-icon>
+              </div>
+              <div>
+                <div
+                  style="color: var(--white); font-weight: 800; font-size: 18px"
+                >
+                  Ready to Dispatch
+                </div>
+                <div
+                  style="
+                    color: rgba(255, 255, 255, 0.7);
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-top: 2px;
+                  "
+                >
+                  100% Quality Tested
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. TRUST BAR -->
+      <div class="trust-bar">
+        <div class="container trust-bar-grid">
+          <div class="tb-item">
+            <iconify-icon
+              icon="lucide:factory"
+              class="tb-icon"
+              style="font-size: 24px"
+            ></iconify-icon>
+            Est. 1985
+          </div>
+          <div class="tb-divider"></div>
+          <div class="tb-item">
+            <iconify-icon
+              icon="lucide:users"
+              class="tb-icon"
+              style="font-size: 24px"
+            ></iconify-icon>
+            14,000+ Clients
+          </div>
+          <div class="tb-divider"></div>
+          <div class="tb-item">
+            <iconify-icon
+              icon="lucide:globe"
+              class="tb-icon"
+              style="font-size: 24px"
+            ></iconify-icon>
+            UAE · Kenya · Malaysia
+          </div>
+          <div class="tb-divider"></div>
+          <div class="tb-item">
+            <iconify-icon
+              icon="lucide:check-circle-2"
+              class="tb-icon"
+              style="font-size: 24px"
+            ></iconify-icon>
+            ISO EC GST
+          </div>
+          <div class="tb-divider"></div>
+          <div class="tb-item">
+            <iconify-icon
+              icon="lucide:repeat"
+              class="tb-icon"
+              style="font-size: 24px"
+            ></iconify-icon>
+            1,000+ Bulk Orders
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. PAIN/SOLUTION -->
+      <section class="pain-solution">
+        <div class="container ps-grid">
+          <div class="ps-card ps-red">
+            <h2>Tired of Unreliable Suppliers?</h2>
+            <ul class="ps-list">
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:x"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Inconsistent product quality
+              </li>
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:x"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Extremely high MOQs
+              </li>
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:x"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Delayed shipping times
+              </li>
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:x"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Zero after-sales support
+              </li>
+            </ul>
+          </div>
+
+          <div class="ps-card solution ps-green">
+            <h2>Bhakti Fixes That.</h2>
+            <ul class="ps-list">
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                100% Factory tested parts
+              </li>
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Flexible MOQ starting from 10 units
+              </li>
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Guaranteed 48hr dispatch
+              </li>
+              <li class="ps-item">
+                <div class="ps-icon-wrap">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 28px"
+                  ></iconify-icon>
+                </div>
+                Dedicated account manager
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- 5. PRODUCTS -->
+      <section class="products">
+        <div class="container">
+          <div class="section-header">
+            <h2>Everything Your Print Business Needs</h2>
+            <p>
+              Compatible with HP · Canon · Ricoh · Sharp · Konica Minolta ·
+              Brother
+            </p>
+          </div>
+
+          <div class="product-grid">
+            <div class="product-card">
+              <div class="product-icon">
+                <iconify-icon
+                  icon="lucide:cylinder"
+                  style="font-size: 32px"
+                ></iconify-icon>
+              </div>
+              <h3>OPC Drums</h3>
+              <div>
+                <div class="product-badge">MOQ: 10 units</div>
+              </div>
+              <div data-media-type="banani-button" class="product-btn">
+                Get Quote
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">
+                <iconify-icon
+                  icon="lucide:box"
+                  style="font-size: 32px"
+                ></iconify-icon>
+              </div>
+              <h3>Toner Cartridges</h3>
+              <div>
+                <div class="product-badge">Bulk pricing</div>
+              </div>
+              <div data-media-type="banani-button" class="product-btn">
+                Get Quote
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">
+                <iconify-icon
+                  icon="lucide:settings-2"
+                  style="font-size: 32px"
+                ></iconify-icon>
+              </div>
+              <h3>Printer Rollers</h3>
+              <div>
+                <div class="product-badge">Export quality</div>
+              </div>
+              <div data-media-type="banani-button" class="product-btn">
+                Get Quote
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-icon">
+                <iconify-icon
+                  icon="lucide:layout-dashboard"
+                  style="font-size: 32px"
+                ></iconify-icon>
+              </div>
+              <h3>Parts &amp; Consumables</h3>
+              <div>
+                <div class="product-badge">Trade inquiries</div>
+              </div>
+              <div data-media-type="banani-button" class="product-btn">
+                Get Quote
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. WHY CHOOSE US -->
+      <section class="why-us">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 80px">
+            <h2>Why 14,000+ Businesses Trust Us</h2>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="why-icon">
+                <iconify-icon
+                  icon="lucide:factory"
+                  style="font-size: 40px"
+                ></iconify-icon>
+              </div>
+              <h3>Direct Manufacturer</h3>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">
+                <iconify-icon
+                  icon="lucide:microscope"
+                  style="font-size: 40px"
+                ></iconify-icon>
+              </div>
+              <h3>Quality Tested</h3>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">
+                <iconify-icon
+                  icon="lucide:package-open"
+                  style="font-size: 40px"
+                ></iconify-icon>
+              </div>
+              <h3>Flexible MOQ</h3>
+            </div>
+            <div class="why-card">
+              <div class="why-icon">
+                <iconify-icon
+                  icon="lucide:globe-2"
+                  style="font-size: 40px"
+                ></iconify-icon>
+              </div>
+              <h3>Export Ready Since 1985</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. TESTIMONIALS -->
+      <section class="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <h2>What Our Buyers Say</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              <div class="t-quote-mark">
+                <iconify-icon
+                  icon="lucide:quote"
+                  style="font-size: 64px"
+                ></iconify-icon>
+              </div>
+              <div class="t-stars">
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+              </div>
+              <div class="t-text">
+                "We've been sourcing OPC drums from Bhakti for 5 years. Their
+                quality consistency is unmatched in the Indian market, and
+                shipments are always on time."
+              </div>
+              <div class="t-author">
+                <img
+                  src="https://storage.googleapis.com/banani-avatars/avatar%2Fmale%2F35-50%2FSouth%20Asian%2F1"
+                  class="t-avatar"
+                  alt="Rajesh"
+                />
+                <div>
+                  <div class="t-name">Rajesh Kumar</div>
+                  <div class="t-role">PrintTech Solutions, India</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-quote-mark">
+                <iconify-icon
+                  icon="lucide:quote"
+                  style="font-size: 64px"
+                ></iconify-icon>
+              </div>
+              <div class="t-stars">
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+              </div>
+              <div class="t-text">
+                "Finding a reliable supplier for our Dubai distribution was
+                tough until we found Bhakti Enterprises. Excellent packaging and
+                export-ready documentation."
+              </div>
+              <div class="t-author">
+                <img
+                  src="https://storage.googleapis.com/banani-avatars/avatar%2Fmale%2F35-50%2FMiddle%20Eastern%2F2"
+                  class="t-avatar"
+                  alt="Ahmed"
+                />
+                <div>
+                  <div class="t-name">Ahmed Al-Maktoum</div>
+                  <div class="t-role">Gulf Toner Supplies, UAE</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="t-quote-mark">
+                <iconify-icon
+                  icon="lucide:quote"
+                  style="font-size: 64px"
+                ></iconify-icon>
+              </div>
+              <div class="t-stars">
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="lucide:star"
+                  style="font-size: 24px"
+                ></iconify-icon>
+              </div>
+              <div class="t-text">
+                "The dedicated account manager makes ordering so simple. We
+                appreciate the low MOQs which allow us to test new compatible
+                models without risk."
+              </div>
+              <div class="t-author">
+                <img
+                  src="https://storage.googleapis.com/banani-avatars/avatar%2Ffemale%2F25-35%2FSouth%20Asian%2F3"
+                  class="t-avatar"
+                  alt="Priya"
+                />
+                <div>
+                  <div class="t-name">Priya Sharma</div>
+                  <div class="t-role">ElectroPrint Resellers, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. LEAD FORM CTA -->
+      <section class="cta-section">
+        <div class="container cta-grid">
+          <div class="cta-content">
+            <h2>Get the Best Bulk Price Today</h2>
+            <ul class="cta-list">
+              <li>
+                <div class="cta-list-icon">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 20px"
+                  ></iconify-icon>
+                </div>
+                No commitment required
+              </li>
+              <li>
+                <div class="cta-list-icon">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 20px"
+                  ></iconify-icon>
+                </div>
+                Custom volume pricing
+              </li>
+              <li>
+                <div class="cta-list-icon">
+                  <iconify-icon
+                    icon="lucide:check"
+                    style="font-size: 20px"
+                  ></iconify-icon>
+                </div>
+                Direct WhatsApp support
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="form-card">
+              <div class="form-group">
+                <label class="form-label">Business Name</label>
+                <div class="form-input">Enter your company name</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <div class="form-input">Enter your full name</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Product Interest</label>
+                <div
+                  class="form-input form-select"
+                  style="color: var(--navy); font-weight: 500"
+                >
+                  Select a product...
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Country</label>
+                  <div class="form-input">e.g. India</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">WhatsApp / Email</label>
+                  <div class="form-input">Contact details</div>
+                </div>
+              </div>
+              <div
+                data-media-type="banani-button"
+                class="btn btn-primary form-submit"
+              >
+                Send Bulk Inquiry
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <a href="#" class="logo" style="text-decoration: none">
+                <div class="logo-icon">
+                  <iconify-icon
+                    icon="lucide:hexagon"
+                    style="font-size: 20px"
+                  ></iconify-icon>
+                </div>
+                Bhakti Enterprises
+              </a>
+              <div class="footer-address">
+                124 Industrial Estate, Andheri East,<br />
+                Mumbai, Maharashtra 400093, India<br />
+                ISO 9001:2015 Certified
+              </div>
+            </div>
+
+            <div class="footer-actions">
+              <div
+                data-media-type="banani-button"
+                class="btn"
+                style="background: var(--blue); color: var(--white)"
+              >
+                <iconify-icon
+                  icon="lucide:message-circle"
+                  style="font-size: 20px"
+                ></iconify-icon>
+                WhatsApp Us
+              </div>
+              <div
+                data-media-type="banani-button"
+                class="btn btn-outline"
+                style="
+                  border-color: rgba(255, 255, 255, 0.2);
+                  color: var(--white);
+                "
+              >
+                <iconify-icon
+                  icon="lucide:mail"
+                  style="font-size: 20px"
+                ></iconify-icon>
+                Email Inquiry
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div>© 2024 Bhakti Enterprises. All rights reserved.</div>
+            <div>Manufacturer · Exporter · Supplier since 1985</div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Floating WhatsApp Button -->
+      <div class="fab-wrap">
+        <div class="fab" data-media-type="banani-button">
+          <iconify-icon
+            icon="lucide:message-circle"
+            style="font-size: 36px"
+          ></iconify-icon>
+        </div>
+      </div>
+    </body>
+  </html>
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  <style>
+    :root {
+      --background: #ffffff;
+      --foreground: #0f1b4a;
+      --border: #00000014;
+      --input: #ffffff;
+      --primary: #a8e063;
+      --primary-foreground: #0f1b4a;
+      --secondary: #f0f7ff;
+      --secondary-foreground: #0f1b4a;
+      --muted: #f8fafc;
+      --muted-foreground: #94a3b8;
+      --success: #a8e063;
+      --success-foreground: #0f1b4a;
+      --accent: #0ea5e9;
+      --accent-foreground: #ffffff;
+      --destructive: #ef4444;
+      --destructive-foreground: #ffffff;
+      --warning: #f59e0b;
+      --warning-foreground: #0f1b4a;
+      --card: #ffffff;
+      --card-foreground: #0f1b4a;
+      --sidebar: #f0f7ff;
+      --sidebar-foreground: #0f1b4a;
+      --sidebar-primary: #0ea5e9;
+      --sidebar-primary-foreground: #ffffff;
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-xl: 12px;
+      --font-family-body: Inter;
+    }
+  </style>
+</div>
