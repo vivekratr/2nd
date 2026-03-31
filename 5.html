@@ -65,7 +65,7 @@ tailwind.config = {
     --shadow-custom:0px 4px 16px -2px rgba(10,22,40,0.04);
     --shadow-custom-hover:0px 8px 28px -2px rgba(10,22,40,0.07);
   }
-  html,body{height:auto;min-height:100%;}
+  html,body{height:auto;min-height:100%;overflow-x:hidden;}
   body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#334155;background:#ffffff;}
   h1,h2,h3,h4,h5,h6{color:#0a1628;}
 
@@ -74,13 +74,20 @@ tailwind.config = {
   #nav-inner{max-width:1280px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;border-radius:20px;background:rgba(255,255,255,0.98);border:1px solid rgba(237,240,245,0.9);box-shadow:0 2px 12px rgba(10,22,40,0.04);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:all 0.35s cubic-bezier(0.4,0,0.2,1);}
   #main-nav.scrolled #nav-inner{border-radius:0;border:none;box-shadow:none;background:transparent;padding:0 40px;max-width:1280px;}
 
+  @media (max-width:480px){
+    #main-nav{padding:12px 12px;}
+    #nav-inner{padding:0 16px;}
+    #main-nav.scrolled #nav-inner{padding:0 16px;}
+  }
+
   .nav-cta{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 24px;background:#0a1628;color:#ffffff;font-family:var(--font-heading-name),sans-serif;font-weight:700;font-size:13.5px;letter-spacing:-0.01em;border-radius:12px;text-decoration:none;transition:background 0.2s ease,transform 0.2s ease,box-shadow 0.2s ease;box-shadow:0 1px 3px rgba(10,22,40,0.08);position:relative;overflow:hidden;}
   .nav-cta::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);transition:left 0.5s ease;}
   .nav-cta:hover{background:#18308f;transform:translateY(-1px);box-shadow:0 4px 14px rgba(10,22,40,0.14);}
   .nav-cta:hover::after{left:160%;}
 
-  .reveal{opacity:0;transform:translateY(12px);transition:opacity 0.9s cubic-bezier(0.2,0.8,0.2,1),transform 0.9s cubic-bezier(0.2,0.8,0.2,1);}
-  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal{opacity:1;transform:translateY(0);transition:opacity 0.9s cubic-bezier(0.2,0.8,0.2,1),transform 0.9s cubic-bezier(0.2,0.8,0.2,1);}
+  html.js-reveal-enhanced .reveal{opacity:0;transform:translateY(12px);}
+  html.js-reveal-enhanced .reveal.visible{opacity:1;transform:translateY(0);}
 
   .hero-word{display:inline-block;opacity:0;transform:translateY(22px);animation:wordIn 0.7s cubic-bezier(0.2,0.8,0.2,1) forwards;}
   @keyframes wordIn{to{opacity:1;transform:translateY(0);}}
@@ -156,7 +163,24 @@ tailwind.config = {
   @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
   .ticker-track{display:flex;animation:ticker 32s linear infinite;width:max-content;}
   .ticker-track:hover{animation-play-state:paused;}
+
+  .footer-social-link{color:#64748b;transition:color 0.2s ease;}
+  .footer-social-link:hover{color:#0a1628;}
+  .footer-social-link:focus-visible{outline:2px solid #1f3bb4;outline-offset:3px;border-radius:4px;}
+
+  @media (prefers-reduced-motion:reduce){
+    .ticker-track{animation:none;transform:none;}
+    .float-a,.float-b{animation:none;}
+    .pulse-dot,.wa-ping{animation:none;}
+    .hero-word{animation:none;opacity:1;transform:none;}
+    html.js-reveal-enhanced .reveal,
+    html.js-reveal-enhanced .reveal.visible{opacity:1;transform:none;transition:none;}
+    .product-card:hover{transform:none;}
+    .product-card:hover .card-img{transform:none;}
+    .hero-frame:hover{transform:none;}
+  }
 </style>
+<script>document.documentElement.classList.add('js-reveal-enhanced');</script>
 </head>
 <body class="font-body antialiased" style="height:auto;min-height:100%;background:#ffffff;">
 
@@ -177,28 +201,14 @@ tailwind.config = {
   </div>
 </nav>
 
-<!-- URGENCY TICKER BAR -->
-<div class="hidden md:block" style="background:#0a1628;padding:9px 0;overflow:hidden;position:relative;z-index:40;">
-  <div class="ticker-track">
-    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ 1,200+ Distributors Trust Us</span>
-    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">OPC Drums · Toner Cartridges · Fuser Units · Spare Parts · Ink Cartridges · Toner Powder</span>
-    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ ISO Certified · Export Ready · 24h Quote Guaranteed</span>
-    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">Serving Africa · Middle East · SE Asia · Europe · Ahmedabad, India</span>
-    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ 1,200+ Distributors Trust Us</span>
-    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">OPC Drums · Toner Cartridges · Fuser Units · Spare Parts · Ink Cartridges · Toner Powder</span>
-    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ ISO Certified · Export Ready · 24h Quote Guaranteed</span>
-    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">Serving Africa · Middle East · SE Asia · Europe · Ahmedabad, India</span>
-  </div>
-</div>
-
 <!-- 1. HERO -->
-<section class="relative overflow-hidden" style="background:#ffffff;padding-top:148px;padding-bottom:100px;">
+<section class="relative overflow-x-hidden overflow-hidden" style="background:#ffffff;padding-top:148px;padding-bottom:100px;">
   <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse 80% 70% at 65% 38%,rgba(31,59,180,0.022) 0%,transparent 65%),radial-gradient(ellipse 50% 40% at 8% 82%,rgba(168,224,99,0.03) 0%,transparent 60%);"></div>
   <div class="hero-grid"></div>
   <div class="absolute bottom-0 left-0 right-0 pointer-events-none" style="height:120px;background:linear-gradient(to bottom,transparent,#ffffff);"></div>
 
   <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-20 relative z-10">
-    <div class="flex flex-col lg:flex-row items-center gap-16 xl:gap-24">
+    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-16 xl:gap-24">
 
       <!-- LEFT COPY -->
       <div class="w-full lg:w-[54%] flex flex-col items-start">
@@ -220,7 +230,7 @@ tailwind.config = {
 
         <!-- Social proof avatars -->
         <div class="flex items-center gap-3 mb-9 px-4 py-3 rounded-2xl" style="background:#f8fafc;border:1px solid rgba(226,232,240,0.6);">
-          <div class="flex -space-x-2 shrink-0">
+          <div class="flex -space-x-2 shrink-0" aria-hidden="true">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face&q=80" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face&q=80" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&q=80" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
@@ -263,7 +273,7 @@ tailwind.config = {
       </div>
 
       <!-- RIGHT IMAGE -->
-      <div class="w-full lg:w-[46%] flex items-center justify-center lg:justify-end">
+      <div class="w-full lg:w-[46%] flex items-start justify-center lg:justify-end">
         <div class="hero-frame relative w-full" style="max-width:520px;">
           <div class="relative overflow-hidden shadow-brand-xl" style="aspect-ratio:4/3;border-radius:32px;border:1px solid rgba(237,240,245,0.8);">
             <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=85&w=1200&auto=format&fit=crop" alt="Export Warehouse" class="w-full h-full object-cover">
@@ -293,6 +303,20 @@ tailwind.config = {
     </div>
   </div>
 </section>
+
+<!-- URGENCY TICKER BAR -->
+<div class="hidden md:block" style="background:#0a1628;padding:9px 0;overflow:hidden;position:relative;z-index:40;">
+  <div class="ticker-track">
+    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ 1,200+ Distributors Trust Us</span>
+    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">OPC Drums · Toner Cartridges · Fuser Units · Spare Parts · Ink Cartridges · Toner Powder</span>
+    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ ISO Certified · Export Ready · 24h Quote Guaranteed</span>
+    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">Serving Africa · Middle East · SE Asia · Europe · Ahmedabad, India</span>
+    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ 1,200+ Distributors Trust Us</span>
+    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">OPC Drums · Toner Cartridges · Fuser Units · Spare Parts · Ink Cartridges · Toner Powder</span>
+    <span style="color:#a8e063;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:0 52px;font-family:var(--font-heading-name),sans-serif;">✦ ISO Certified · Export Ready · 24h Quote Guaranteed</span>
+    <span style="color:rgba(255,255,255,0.38);font-size:10.5px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;padding:0 52px;font-family:var(--font-body-name),sans-serif;">Serving Africa · Middle East · SE Asia · Europe · Ahmedabad, India</span>
+  </div>
+</div>
 
 <!-- 2. TRUST STATS -->
 <section style="background:#ffffff;padding-top:72px;padding-bottom:72px;">
@@ -661,10 +685,10 @@ tailwind.config = {
     <div class="flex flex-col md:flex-row justify-between items-center gap-3">
       <p class="text-xs font-normal" style="color:#c4cdd8;">© 2025 Bhakti Enterprises. All rights reserved. · ISO Certified Exporter · Made in India 🇮🇳</p>
       <div class="flex gap-5">
-        <a href="#" class="transition-opacity duration-200 hover:opacity-40" style="color:#dde3ec;">
+        <a href="#" class="footer-social-link" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
-        <a href="#" class="transition-opacity duration-200 hover:opacity-40" style="color:#dde3ec;">
+        <a href="#" class="footer-social-link" aria-label="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
       </div>
@@ -674,7 +698,7 @@ tailwind.config = {
 
 <!-- WhatsApp -->
 <div class="wa-tooltip" id="wa-tooltip">👋 Chat with our Export Manager</div>
-<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20bulk%20pricing%20for%20printer%20consumables." class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20bulk%20pricing%20for%20printer%20consumables." class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
   <div class="wa-icon-wrap">
     <div class="wa-ping"></div>
     <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1;">
