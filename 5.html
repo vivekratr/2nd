@@ -156,12 +156,6 @@ tailwind.config = {
   #quote-form .float-input:focus::placeholder,#quote-form .float-textarea:focus::placeholder{opacity:1;}
   #quote-form .float-input:focus~.float-label,#quote-form .float-input:not(:placeholder-shown)~.float-label{color:#1f3bb4;}
   #quote-form .float-textarea:focus~.float-label,#quote-form .float-textarea:not(:placeholder-shown)~.float-label{color:#1f3bb4;}
-  #quote-form .trust-benefits{margin-top:28px;padding-top:28px;border-top:1px solid #f1f5f9;display:flex;flex-direction:column;gap:18px;}
-  #quote-form .trust-benefit{display:flex;align-items:flex-start;gap:18px;padding:22px 20px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:12px;transition:transform 0.28s ease,box-shadow 0.28s ease;}
-  #quote-form .trust-benefit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(10,22,40,0.07),0 2px 8px rgba(10,22,40,0.04);}
-  #quote-form .trust-benefit-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(31,59,180,0.06);border:1px solid rgba(31,59,180,0.1);box-shadow:0 1px 2px rgba(10,22,40,0.02);}
-  #quote-form .trust-benefit-title{font-family:var(--font-heading-name),sans-serif;font-weight:700;font-size:16px;letter-spacing:-0.022em;color:#0a1628;line-height:1.35;}
-  #quote-form .trust-benefit-desc{margin:6px 0 0;font-size:12.5px;line-height:1.68;color:#64748b;font-weight:400;max-width:38ch;}
 
   .cta-wa{background:#25D366!important;color:#fff!important;box-shadow:0 4px 22px rgba(37,211,102,0.38),0 2px 8px rgba(37,211,102,0.2);}
   .cta-wa:hover{background:#20bd5a!important;box-shadow:0 8px 28px rgba(37,211,102,0.42),0 2px 10px rgba(37,211,102,0.22);}
@@ -270,7 +264,6 @@ tailwind.config = {
     .product-card--featured{transform:none;}
     .product-card--featured:hover{transform:none;}
     .hero-frame:hover{transform:none;}
-    #quote-form .trust-benefit:hover{transform:none;box-shadow:none;}
   }
 </style>
 <script>document.documentElement.classList.add('js-reveal-enhanced');</script>
@@ -575,37 +568,6 @@ tailwind.config = {
             <p class="text-center text-sm font-semibold tracking-wide mt-5" style="color:#334155;line-height:1.5;">Free · No commitment · Reply within 24 hours</p>
           </div>
         </form>
-
-        <!-- Trust benefits -->
-        <div class="trust-benefits">
-          <div class="trust-benefit">
-            <div class="trust-benefit-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f3bb4" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-            </div>
-            <div class="min-w-0 pt-0.5">
-              <div class="trust-benefit-title">Custom Bulk Pricing</div>
-              <p class="trust-benefit-desc">Pricing tailored to your order size — no fixed rates</p>
-            </div>
-          </div>
-          <div class="trust-benefit">
-            <div class="trust-benefit-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f3bb4" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <div class="min-w-0 pt-0.5">
-              <div class="trust-benefit-title">ISO-Certified Quality</div>
-              <p class="trust-benefit-desc">Every batch tested before export for consistent performance</p>
-            </div>
-          </div>
-          <div class="trust-benefit">
-            <div class="trust-benefit-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f3bb4" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.86.3 1.7.63 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.8.33 1.64.51 2.5.63A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="min-w-0 pt-0.5">
-              <div class="trust-benefit-title">Dedicated Export Support</div>
-              <p class="trust-benefit-desc">Single point of contact from quote to delivery</p>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
