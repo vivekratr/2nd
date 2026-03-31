@@ -80,6 +80,12 @@ tailwind.config = {
     #main-nav.scrolled #nav-inner{padding:0 16px;}
   }
 
+  .brand-logo-link{display:flex;align-items:center;text-decoration:none;}
+  .brand-logo-img{height:38px;width:auto;max-width:min(200px,42vw);display:block;object-fit:contain;object-position:left center;transition:transform 0.3s ease;}
+  @media (min-width:640px){.brand-logo-img{height:42px;max-width:220px;}}
+  .brand-logo-link:hover .brand-logo-img,.brand-logo-link:focus-visible .brand-logo-img{transform:scale(1.02);}
+  .footer-brand-logo{height:48px;width:auto;max-width:240px;display:block;object-fit:contain;object-position:left center;}
+
   .nav-cta{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 24px;background:#0a1628;color:#ffffff;font-family:var(--font-heading-name),sans-serif;font-weight:700;font-size:13.5px;letter-spacing:-0.01em;border-radius:12px;text-decoration:none;transition:background 0.2s ease,transform 0.2s ease,box-shadow 0.2s ease;box-shadow:0 1px 3px rgba(10,22,40,0.08);position:relative;overflow:hidden;}
   .nav-cta::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);transition:left 0.5s ease;}
   .nav-cta:hover{background:#18308f;transform:translateY(-1px);box-shadow:0 4px 14px rgba(10,22,40,0.14);}
@@ -202,12 +208,8 @@ tailwind.config = {
 <!-- STICKY NAVBAR -->
 <nav id="main-nav">
   <div id="nav-inner">
-    <a href="#" class="flex items-center gap-3 group shrink-0" style="text-decoration:none;">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-black text-base group-hover:scale-105 transition-transform duration-300" style="background:#0a1628;">B</div>
-      <div class="flex flex-col">
-        <span class="font-heading font-black leading-none" style="font-size:16px;letter-spacing:-0.02em;color:#0a1628;">BHAKTI</span>
-        <span class="font-body font-normal leading-none mt-1" style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#b0bec8;">Enterprises</span>
-      </div>
+    <a href="#" class="brand-logo-link group shrink-0" aria-label="Bhakti Enterprises home">
+      <img src="logo.png" width="220" height="56" class="brand-logo-img" alt="Bhakti Enterprises" decoding="async" />
     </a>
     <div class="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0 flex-1 justify-end">
       <div class="flex items-start gap-2 md:gap-3 shrink-0 min-w-0">
@@ -674,10 +676,9 @@ tailwind.config = {
   <div class="max-w-6xl mx-auto px-8 md:px-12 lg:px-20">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-14 md:gap-10" style="margin-bottom:72px;">
       <div class="col-span-1">
-        <div class="flex items-center gap-3 mb-7">
-          <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-black text-base" style="background:#0a1628;">B</div>
-          <span class="font-heading font-black text-[16px]" style="letter-spacing:-0.02em;color:#0a1628;">BHAKTI</span>
-        </div>
+        <a href="#" class="brand-logo-link inline-flex mb-7" aria-label="Bhakti Enterprises home">
+          <img src="logo.png" width="240" height="64" class="footer-brand-logo" alt="Bhakti Enterprises" decoding="async" />
+        </a>
         <p class="font-normal" style="font-size:13px;line-height:1.9;color:#b0bec8;">India's premier exporter of printer consumables. Serving global markets with integrity and quality.</p>
         <div class="mt-8 flex flex-wrap items-start gap-4">
           <div
