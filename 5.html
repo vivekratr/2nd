@@ -165,10 +165,15 @@ tailwind.config = {
   .footer-trust{padding:0!important;background:transparent!important;border:none!important;}
   .footer-trust:hover{box-shadow:none!important;}
   .footer-trust img{width:72px;height:auto;display:block;}
-  .one-star-emblem{flex-shrink:0;pointer-events:none;line-height:0;}
+  .one-star-block{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .one-star-emblem{pointer-events:none;line-height:0;}
   .nav-one-star img{height:44px;width:auto;display:block;}
   @media (max-width:480px){.nav-one-star img{height:38px;}}
   .footer-one-star img{width:72px;height:auto;display:block;}
+  .one-star-label{font-family:var(--font-heading-name),sans-serif;font-weight:700;text-align:center;color:#0a1628;line-height:1.2;margin:0;}
+  .one-star-label--nav{font-size:7px;letter-spacing:0.05em;max-width:76px;}
+  @media (min-width:640px){.one-star-label--nav{font-size:8px;max-width:92px;}}
+  .one-star-label--footer{font-size:10px;letter-spacing:-0.02em;max-width:104px;}
 
   @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
   .ticker-track{display:flex;animation:ticker 32s linear infinite;width:max-content;}
@@ -205,7 +210,7 @@ tailwind.config = {
       </div>
     </a>
     <div class="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0 flex-1 justify-end">
-      <div class="flex items-center gap-2 md:gap-3 shrink-0 min-w-0">
+      <div class="flex items-start gap-2 md:gap-3 shrink-0 min-w-0">
         <div
           class="trust-seal-im nav-trust flex items-center shrink-0"
           role="button"
@@ -216,8 +221,11 @@ tailwind.config = {
         >
           <img src="trust-seal.png" width="80" height="80" alt="IndiaMart Trust Seal" decoding="async" />
         </div>
-        <div class="one-star-emblem nav-one-star" role="img" aria-label="1 Star Export House, recognised by Government of India">
-          <img src="onestar.png" width="80" height="80" alt="" decoding="async" />
+        <div class="one-star-block">
+          <div class="one-star-emblem nav-one-star">
+            <img src="onestar.png" width="80" height="80" alt="" decoding="async" />
+          </div>
+          <p class="one-star-label one-star-label--nav">One Star Export House Certified</p>
         </div>
       </div>
       <a href="#quote-form" class="nav-cta shrink-0">
@@ -671,7 +679,7 @@ tailwind.config = {
           <span class="font-heading font-black text-[16px]" style="letter-spacing:-0.02em;color:#0a1628;">BHAKTI</span>
         </div>
         <p class="font-normal" style="font-size:13px;line-height:1.9;color:#b0bec8;">India's premier exporter of printer consumables. Serving global markets with integrity and quality.</p>
-        <div class="mt-8 flex flex-wrap items-center gap-4">
+        <div class="mt-8 flex flex-wrap items-start gap-4">
           <div
             class="trust-seal-im footer-trust inline-flex"
             role="button"
@@ -682,8 +690,11 @@ tailwind.config = {
           >
             <img src="trust-seal.png" width="96" height="96" alt="IndiaMart Trust Seal" decoding="async" />
           </div>
-          <div class="one-star-emblem footer-one-star" role="img" aria-label="1 Star Export House, recognised by Government of India">
-            <img src="onestar.png" width="96" height="96" alt="" decoding="async" />
+          <div class="one-star-block">
+            <div class="one-star-emblem footer-one-star">
+              <img src="onestar.png" width="96" height="96" alt="" decoding="async" />
+            </div>
+            <p class="one-star-label one-star-label--footer">One Star Export House Certified</p>
           </div>
         </div>
       </div>
