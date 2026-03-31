@@ -213,11 +213,11 @@ tailwind.config = {
   .brand-marquee-pad{max-width:80rem;margin:0 auto;padding:clamp(3.25rem,7vw,5.25rem) clamp(1.75rem,4vw,2.5rem) clamp(1rem,2.5vw,1.35rem);text-align:center;}
   .brand-marquee-view{position:relative;overflow:hidden;padding:clamp(0.85rem,2vw,1.35rem) 0 clamp(3rem,6.5vw,4.75rem);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);}
   @keyframes brand-marquee-drift{0%{transform:translate3d(0,0,0);}100%{transform:translate3d(-50%,0,0);}}
-  .brand-marquee-track{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:max-content;gap:clamp(2.75rem,7vw,4.75rem);animation:brand-marquee-drift 88s linear infinite;}
+  .brand-marquee-track{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:max-content;gap:clamp(2.25rem,5.5vw,3.75rem);animation:brand-marquee-drift 118s linear infinite;}
   .brand-marquee-track:hover{animation-play-state:paused;}
-  .brand-marquee-group{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:clamp(2.75rem,7vw,4.75rem);flex-shrink:0;}
+  .brand-marquee-group{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;gap:clamp(2.25rem,5.5vw,3.75rem);flex-shrink:0;}
   .brand-marquee-item{display:flex;align-items:center;justify-content:center;height:44px;padding:0 6px;}
-  .brand-marquee-item img{display:block;height:clamp(26px,4vw,32px);width:auto;max-width:min(112px,22vw);object-fit:contain;object-position:center;filter:grayscale(100%);opacity:0.6;transition:filter 0.5s ease,opacity 0.5s ease;}
+  .brand-marquee-item img{display:block;height:clamp(24px,3.6vw,34px);width:auto;max-width:min(150px,28vw);object-fit:contain;object-position:center;filter:grayscale(100%);opacity:0.6;transition:filter 0.5s ease,opacity 0.5s ease;}
   .brand-marquee-item:hover img,.brand-marquee-item:focus-within img{filter:grayscale(0%);opacity:1;}
   .brand-marquee-item:focus-visible{outline:2px solid #1f3bb4;outline-offset:4px;border-radius:6px;}
 
@@ -399,7 +399,7 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- 1b. Brand marquee — leading OEM marks (site: consumables / printers & copiers; no explicit brand list on homepage) -->
+<!-- 1b. Brand marquee — logos from bhaktienterprises.co.in/home/we-deals-in/ -->
 <section class="brand-marquee-section" aria-label="Original imaging supplies across leading printer brands">
   <div class="brand-marquee-pad">
     <p class="brand-marquee-label">Original imaging supplies for leading brands</p>
@@ -407,20 +407,34 @@ tailwind.config = {
   <div class="brand-marquee-view">
     <div class="brand-marquee-track">
       <div class="brand-marquee-group">
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/hp" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/canon" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/brother" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/epson" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/xerox" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/ricoh" width="40" height="40" alt="" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/hp.png" width="120" height="40" alt="HP" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/canon.png" width="120" height="40" alt="Canon" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/brother.png" width="120" height="40" alt="Brother" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/epson.png" width="120" height="40" alt="Epson" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/samsung.png" width="120" height="40" alt="Samsung" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/xerox.png" width="120" height="40" alt="Xerox" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/ricoh.png" width="120" height="40" alt="Ricoh" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/kyocera.png" width="120" height="40" alt="Kyocera" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/sindoh.png" width="120" height="40" alt="Sindoh" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/toshiba.png" width="120" height="40" alt="Toshiba" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/konica.png" width="120" height="40" alt="Konica Minolta" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/sharp.png" width="120" height="40" alt="Sharp" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/riso.png" width="120" height="40" alt="Riso" loading="lazy" decoding="async" /></div>
       </div>
       <div class="brand-marquee-group brand-marquee-group--clone" aria-hidden="true">
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/hp" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/canon" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/brother" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/epson" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/xerox" width="40" height="40" alt="" decoding="async" /></div>
-        <div class="brand-marquee-item"><img src="https://cdn.simpleicons.org/ricoh" width="40" height="40" alt="" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/hp.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/canon.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/brother.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/epson.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/samsung.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/xerox.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/ricoh.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/kyocera.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/sindoh.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/toshiba.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/konica.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/sharp.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
+        <div class="brand-marquee-item"><img src="https://bhaktienterprises.co.in/home/we-deals-in/riso.png" width="120" height="40" alt="" loading="lazy" decoding="async" /></div>
       </div>
     </div>
   </div>
