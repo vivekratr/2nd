@@ -165,6 +165,11 @@ tailwind.config = {
 
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
   .pulse-dot{animation:pulse 2.4s ease-in-out infinite;}
+  @keyframes pulse-hero{0%,100%{opacity:0.92;transform:scale(1);}50%{opacity:0.45;transform:scale(1.35);}}
+  .pulse-dot--hero{display:inline-block;flex-shrink:0;width:10px;height:10px;border-radius:9999px;background:#a8e063;animation:pulse-hero 1.5s ease-in-out infinite;will-change:transform,opacity;}
+  @media (min-width:640px){
+    .pulse-dot--hero{width:11px;height:11px;}
+  }
 
   .footer-link{color:#b0bec8;transition:color 0.2s ease;}
   .footer-link:hover{color:#0a1628;}
@@ -255,7 +260,7 @@ tailwind.config = {
   @media (prefers-reduced-motion:reduce){
     .ticker-track{animation:none;transform:none;}
     .float-a,.float-b{animation:none;}
-    .pulse-dot{animation:none;}
+    .pulse-dot,.pulse-dot--hero{animation:none;opacity:1;transform:none;}
     .hero-word{animation:none;opacity:1;transform:none;}
     html.js-reveal-enhanced .reveal,
     html.js-reveal-enhanced .reveal.visible{opacity:1;transform:none;transition:none;}
@@ -316,7 +321,7 @@ tailwind.config = {
       <div class="w-full lg:w-[54%] flex flex-col items-start">
 
         <div class="inline-flex items-center gap-2 mb-8 px-3.5 py-1.5 rounded-full" style="background:rgba(31,59,180,0.03);border:1px solid rgba(31,59,180,0.06);opacity:0.9;">
-          <span class="w-1 h-1 rounded-full pulse-dot" style="background:#a8e063;opacity:0.85;"></span>
+          <span class="pulse-dot--hero rounded-full" aria-hidden="true"></span>
           <span class="text-[11px] font-semibold tracking-[0.12em] uppercase" style="color:rgba(31,59,180,0.72);line-height:1;">Trusted by 1,200+ distributors</span>
         </div>
 
