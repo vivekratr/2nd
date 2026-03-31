@@ -148,6 +148,15 @@ tailwind.config = {
   .reassurance-row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;}
   .reassurance-row + .reassurance-row{border-top:1px solid rgba(237,240,245,0.8);}
 
+  #quote-form .float-input{border-radius:10px;border-color:#cbd5e1;box-shadow:none;padding-left:18px;padding-right:18px;}
+  #quote-form .float-input:hover{border-color:#94a3b8;}
+  #quote-form .float-input:focus{border-color:#1f3bb4;box-shadow:0 0 0 3px rgba(31,59,180,0.2),0 2px 10px rgba(31,59,180,0.1);}
+  #quote-form .float-label{left:18px;color:#475569;font-weight:500;}
+  #quote-form .float-input:focus~.float-label,#quote-form .float-input:not(:placeholder-shown)~.float-label{color:#1f3bb4;}
+  #quote-form .float-textarea:focus~.float-label,#quote-form .float-textarea:not(:placeholder-shown)~.float-label{color:#1f3bb4;}
+  #quote-form .reassurance-row{align-items:center;padding:15px 0;gap:14px;}
+  #quote-form .reassurance-row + .reassurance-row{border-top:1px solid #f1f5f9;}
+
   .cta-wa{background:#25D366!important;color:#fff!important;box-shadow:0 4px 22px rgba(37,211,102,0.38),0 2px 8px rgba(37,211,102,0.2);}
   .cta-wa:hover{background:#20bd5a!important;box-shadow:0 8px 28px rgba(37,211,102,0.42),0 2px 10px rgba(37,211,102,0.22);}
   .hero-cta-row{width:100%;max-width:min(100%,36rem);}
@@ -460,23 +469,21 @@ tailwind.config = {
   <div class="max-w-xl mx-auto px-6 md:px-8 relative z-10">
 
     <!-- Urgency line -->
-    <div class="flex justify-center reveal" style="margin-bottom:28px;">
-      <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full" style="background:rgba(194,65,12,0.06);border:1px solid rgba(194,65,12,0.12);">
-        <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background:#c2410c;"></span>
-        <span class="text-xs font-bold tracking-[0.12em] uppercase" style="color:#c2410c;">Limited Q3 Slots — Only a Few Spots Left</span>
+    <div class="flex justify-center reveal" style="margin-bottom:24px;">
+      <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full" style="background:linear-gradient(180deg,#fff7ed 0%,#ffedd5 100%);border:1.5px solid rgba(234,88,12,0.42);box-shadow:0 4px 18px rgba(234,88,12,0.14),0 1px 3px rgba(154,52,18,0.08);">
+        <span class="w-2 h-2 rounded-full pulse-dot shrink-0" style="background:#ea580c;"></span>
+        <span class="text-[11px] sm:text-xs font-black tracking-[0.11em] uppercase leading-tight text-center" style="color:#9a3412;">Limited Q3 Slots — Only a Few Spots Left</span>
       </div>
     </div>
 
-    <div class="text-center reveal" style="margin-bottom:44px;">
-      <h2 class="font-heading font-black mb-4" style="font-size:clamp(32px,4vw,52px);letter-spacing:-0.035em;line-height:1.06;color:#0a1628;">
-        Lock In Your<br><span style="color:#a8e063;">Best Bulk Price</span>
-      </h2>
-      <p class="font-body font-normal" style="font-size:15.5px;line-height:1.8;color:#94a3b8;">Join 1,200+ distributors already saving 40% on printer supplies. Get your personalised quote in under 24 hours.</p>
+    <div class="text-center reveal" style="margin-bottom:36px;">
+      <h2 class="font-heading font-black mb-3" style="font-size:clamp(30px,4vw,48px);letter-spacing:-0.035em;line-height:1.08;color:#0a1628;">Get Your Best Bulk Price Today</h2>
+      <p class="font-body font-medium mx-auto" style="font-size:15px;line-height:1.5;color:#475569;max-width:26rem;">Get your bulk price in 24 hours. No commitment.</p>
     </div>
 
     <div class="reveal" style="transition-delay:80ms;">
-      <div style="background:#ffffff;border-radius:32px;padding:48px 44px 44px;box-shadow:0 2px 10px rgba(10,22,40,0.04),0 1px 2px rgba(10,22,40,0.02);border:1px solid rgba(237,240,245,0.8);">
-        <form class="flex flex-col" style="gap:16px;" onsubmit="return false;">
+      <div style="background:#ffffff;border-radius:24px;padding:32px 28px 28px;box-shadow:0 1px 3px rgba(10,22,40,0.04);border:1px solid rgba(226,232,240,0.85);">
+        <form class="flex flex-col" style="gap:14px;" onsubmit="return false;">
           <div class="float-group">
             <input type="text" id="f-name" class="float-input" placeholder="Full Name">
             <label for="f-name" class="float-label">Full Name</label>
@@ -489,43 +496,34 @@ tailwind.config = {
             <textarea id="f-req" class="float-input float-textarea" placeholder="Requirement"></textarea>
             <label for="f-req" class="float-label">Product & Quantity Requirement</label>
           </div>
-          <div style="padding-top:8px;">
-            <button type="submit" class="cta-btn w-full font-heading font-black flex items-center justify-center gap-2.5 hover:-translate-y-1 transition-all duration-200 shadow-lime-glow" style="height:68px;font-size:17px;letter-spacing:-0.01em;border-radius:18px;background:#a8e063;color:#0a1628;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send My Quote Request
+          <div style="padding-top:6px;">
+            <button type="submit" class="cta-btn w-full font-heading font-black flex items-center justify-center gap-2.5 hover:-translate-y-0.5 transition-all duration-200" style="height:76px;font-size:18px;letter-spacing:-0.02em;border-radius:16px;background:#a8e063;color:#0a1628;border:2px solid rgba(10,22,40,0.06);box-shadow:0 0 0 1px rgba(168,224,99,0.35),0 8px 28px rgba(168,224,99,0.35),0 4px 12px rgba(10,22,40,0.08);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Get My Bulk Price
             </button>
-            <p class="text-center text-xs font-medium mt-3" style="color:#b0bec8;">Free · No commitment · Reply within 24 hours</p>
+            <p class="text-center text-sm font-semibold mt-3.5" style="color:#475569;">Free · No commitment · Reply within 24 hours</p>
           </div>
         </form>
 
         <!-- Reassurance points -->
-        <div style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(237,240,245,0.8);">
+        <div style="margin-top:22px;padding-top:20px;border-top:1px solid rgba(237,240,245,0.9);">
           <div class="reassurance-row">
             <div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(168,224,99,0.10);">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a8a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
-            <div>
-              <div class="text-xs font-semibold" style="color:#0a1628;line-height:1.3;">Personalised pricing, not a generic catalogue</div>
-              <div class="text-xs font-normal" style="color:#94a3b8;line-height:1.5;">We quote based on your exact volume and product mix</div>
-            </div>
+            <span class="text-xs font-semibold" style="color:#0a1628;line-height:1.4;">Personalised pricing</span>
           </div>
           <div class="reassurance-row">
             <div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(31,59,180,0.06);">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f3bb4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
             </div>
-            <div>
-              <div class="text-xs font-semibold" style="color:#0a1628;line-height:1.3;">ISO-certified, export-compliant quality</div>
-              <div class="text-xs font-normal" style="color:#94a3b8;line-height:1.5;">Every shipment tested and documented before dispatch</div>
-            </div>
+            <span class="text-xs font-semibold" style="color:#0a1628;line-height:1.4;">ISO-certified quality</span>
           </div>
           <div class="reassurance-row">
-            <div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(37,211,102,0.08);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(31,59,180,0.06);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1f3bb4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div>
-              <div class="text-xs font-semibold" style="color:#0a1628;line-height:1.3;">Dedicated export manager assigned to you</div>
-              <div class="text-xs font-normal" style="color:#94a3b8;line-height:1.5;">One point of contact from quote to delivery</div>
-            </div>
+            <span class="text-xs font-semibold" style="color:#0a1628;line-height:1.4;">Dedicated export support</span>
           </div>
         </div>
 
