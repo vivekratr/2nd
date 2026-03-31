@@ -210,8 +210,8 @@ tailwind.config = {
   /* Brand marquee: below hero — slow drift, grayscale → color on hover */
   .brand-marquee-section{background:#ffffff;}
   .brand-marquee-label{margin:0;font-size:10px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#94a3b8;line-height:1.4;}
-  .brand-marquee-pad{max-width:80rem;margin:0 auto;padding:clamp(3.25rem,7vw,5.25rem) clamp(1.75rem,4vw,2.5rem) clamp(1rem,2.5vw,1.35rem);text-align:center;}
-  .brand-marquee-view{position:relative;overflow:hidden;padding:clamp(0.85rem,2vw,1.35rem) 0 clamp(3rem,6.5vw,4.75rem);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);}
+  .brand-marquee-pad{max-width:80rem;margin:0 auto;padding:clamp(1rem,2.5vw,1.65rem) clamp(1.75rem,4vw,2.5rem) clamp(0.65rem,1.5vw,0.95rem);text-align:center;}
+  .brand-marquee-view{position:relative;overflow:hidden;padding:clamp(0.5rem,1.25vw,0.85rem) 0 clamp(3rem,6.5vw,4.75rem);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);}
   @keyframes brand-marquee-drift{0%{transform:translate3d(0,0,0);}100%{transform:translate3d(-50%,0,0);}}
   .brand-marquee-track{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:center;width:max-content;gap:clamp(2.25rem,5.5vw,3.75rem);animation:brand-marquee-drift 118s linear infinite;}
   .brand-marquee-track:hover{animation-play-state:paused;}
