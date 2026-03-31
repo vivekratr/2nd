@@ -138,16 +138,11 @@ tailwind.config = {
   .reassurance-row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;}
   .reassurance-row + .reassurance-row{border-top:1px solid rgba(237,240,245,0.8);}
 
-  .wa-btn{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;align-items:center;background:#25D366;border-radius:50px;padding:0;cursor:pointer;box-shadow:0 6px 20px rgba(37,211,102,0.22),0 2px 6px rgba(37,211,102,0.12);transition:all 0.38s cubic-bezier(0.34,1.56,0.64,1);overflow:hidden;text-decoration:none;border:none;outline:none;max-width:60px;}
-  .wa-btn:hover{max-width:280px;box-shadow:0 10px 28px rgba(37,211,102,0.28);transform:translateY(-2px);}
-  .wa-icon-wrap{width:60px;height:60px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
-  .wa-text{white-space:nowrap;font-family:var(--font-body-name),sans-serif;font-weight:600;font-size:13px;color:#fff;padding-right:20px;padding-left:2px;opacity:0;transform:translateX(-8px);transition:opacity 0.25s ease 0.1s,transform 0.25s ease 0.1s;pointer-events:none;}
-  .wa-btn:hover .wa-text{opacity:1;transform:translateX(0);}
-  @keyframes waPing{0%{transform:scale(1);opacity:0.4;}100%{transform:scale(1.8);opacity:0;}}
-  .wa-ping{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPing 2.6s ease-out infinite;pointer-events:none;}
-  .wa-tooltip{position:fixed;bottom:102px;right:28px;z-index:9998;background:#0a1628;color:#fff;font-family:var(--font-body-name),sans-serif;font-size:12px;font-weight:500;padding:11px 16px;border-radius:14px 14px 4px 14px;box-shadow:0 4px 16px rgba(10,22,40,0.10);white-space:nowrap;opacity:0;transform:translateY(6px) scale(0.94);transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);pointer-events:none;line-height:1.5;}
-  .wa-tooltip::after{content:'';position:absolute;bottom:-6px;right:18px;width:12px;height:12px;background:#0a1628;clip-path:polygon(0 0,100% 0,100% 100%);}
-  .wa-tooltip.show{opacity:1;transform:translateY(0) scale(1);}
+  .cta-wa{background:#25D366!important;color:#fff!important;box-shadow:0 4px 22px rgba(37,211,102,0.38),0 2px 8px rgba(37,211,102,0.2);}
+  .cta-wa:hover{background:#20bd5a!important;box-shadow:0 8px 28px rgba(37,211,102,0.42),0 2px 10px rgba(37,211,102,0.22);}
+  .hero-cta-row{width:100%;max-width:min(100%,36rem);}
+  @media (min-width:640px){.hero-cta-row{max-width:none;}}
+  .hero-cta-row > a{min-width:0;}
 
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}
   .pulse-dot{animation:pulse 2.4s ease-in-out infinite;}
@@ -160,6 +155,21 @@ tailwind.config = {
   .trust-badge{display:flex;align-items:center;gap:7px;padding:8px 14px;border-radius:50px;background:#fafbfc;border:1px solid #edf0f5;transition:border-color 0.2s ease;}
   .trust-badge:hover{border-color:#dde3ec;}
 
+  .trust-seal-im{cursor:pointer;transition:border-color 0.2s ease,box-shadow 0.2s ease,opacity 0.2s ease;}
+  .trust-seal-im:hover{border-color:rgba(31,59,180,0.22)!important;box-shadow:0 2px 12px rgba(10,22,40,0.06);opacity:0.95;}
+  .trust-seal-im:focus-visible{outline:2px solid #1f3bb4;outline-offset:3px;}
+  .nav-trust{border:none!important;background:transparent!important;box-shadow:none!important;padding:0!important;gap:10px!important;}
+  .nav-trust:hover{box-shadow:none!important;opacity:0.88;}
+  .nav-trust img{height:44px;width:auto;display:block;}
+  @media (max-width:480px){.nav-trust img{height:38px;}}
+  .footer-trust{padding:0!important;background:transparent!important;border:none!important;}
+  .footer-trust:hover{box-shadow:none!important;}
+  .footer-trust img{width:72px;height:auto;display:block;}
+  .one-star-emblem{flex-shrink:0;pointer-events:none;line-height:0;}
+  .nav-one-star img{height:44px;width:auto;display:block;}
+  @media (max-width:480px){.nav-one-star img{height:38px;}}
+  .footer-one-star img{width:72px;height:auto;display:block;}
+
   @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
   .ticker-track{display:flex;animation:ticker 32s linear infinite;width:max-content;}
   .ticker-track:hover{animation-play-state:paused;}
@@ -171,7 +181,7 @@ tailwind.config = {
   @media (prefers-reduced-motion:reduce){
     .ticker-track{animation:none;transform:none;}
     .float-a,.float-b{animation:none;}
-    .pulse-dot,.wa-ping{animation:none;}
+    .pulse-dot{animation:none;}
     .hero-word{animation:none;opacity:1;transform:none;}
     html.js-reveal-enhanced .reveal,
     html.js-reveal-enhanced .reveal.visible{opacity:1;transform:none;transition:none;}
@@ -187,17 +197,34 @@ tailwind.config = {
 <!-- STICKY NAVBAR -->
 <nav id="main-nav">
   <div id="nav-inner">
-    <a href="#" class="flex items-center gap-3 group" style="text-decoration:none;">
+    <a href="#" class="flex items-center gap-3 group shrink-0" style="text-decoration:none;">
       <div class="w-9 h-9 rounded-xl flex items-center justify-center text-white font-black text-base group-hover:scale-105 transition-transform duration-300" style="background:#0a1628;">B</div>
       <div class="flex flex-col">
         <span class="font-heading font-black leading-none" style="font-size:16px;letter-spacing:-0.02em;color:#0a1628;">BHAKTI</span>
         <span class="font-body font-normal leading-none mt-1" style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:#b0bec8;">Enterprises</span>
       </div>
     </a>
-    <a href="#quote-form" class="nav-cta">
-      Get Bulk Quote
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
+    <div class="flex items-center gap-2 sm:gap-3 md:gap-4 min-w-0 flex-1 justify-end">
+      <div class="flex items-center gap-2 md:gap-3 shrink-0 min-w-0">
+        <div
+          class="trust-seal-im nav-trust flex items-center shrink-0"
+          role="button"
+          tabindex="0"
+          aria-label="Verify IndiaMart Trust Seal on IndiaMart"
+          onclick="trustSealIndiaMartClick(event)"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();trustSealIndiaMartClick(event);}"
+        >
+          <img src="trust-seal.png" width="80" height="80" alt="IndiaMart Trust Seal" decoding="async" />
+        </div>
+        <div class="one-star-emblem nav-one-star" role="img" aria-label="1 Star Export House, recognised by Government of India">
+          <img src="onestar.png" width="80" height="80" alt="" decoding="async" />
+        </div>
+      </div>
+      <a href="#quote-form" class="nav-cta shrink-0">
+        Get Bulk Quote
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 </nav>
 
@@ -243,14 +270,14 @@ tailwind.config = {
         </div>
 
         <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 mb-6">
-          <a href="#quote-form" class="cta-btn inline-flex items-center gap-2.5 font-heading font-black rounded-small shadow-lime-glow hover:-translate-y-1.5 transition-all duration-300" style="background:#a8e063;height:62px;padding:0 36px;font-size:16px;letter-spacing:-0.01em;color:#0a1628;">
-            Get My Bulk Price Now
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <div class="hero-cta-row flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3.5 mb-6">
+          <a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20bulk%20pricing%20for%20printer%20consumables." class="cta-btn cta-wa inline-flex w-full sm:w-auto items-center justify-center gap-2.5 font-heading font-black rounded-small hover:-translate-y-1.5 transition-all duration-300 text-center leading-snug" target="_blank" rel="noopener noreferrer" style="min-height:62px;padding:14px 24px;font-size:clamp(14px,3.5vw,16px);letter-spacing:-0.01em;" aria-label="Open WhatsApp to request bulk pricing">
+            <span class="leading-snug">Get My Bulk Price on WhatsApp</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="shrink-0" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
-          <a href="#products" class="cta-outline inline-flex items-center gap-2 font-heading font-semibold rounded-small" style="height:62px;padding:0 28px;font-size:15px;letter-spacing:-0.01em;color:#1f3bb4;border:1.5px solid rgba(31,59,180,0.22);background:transparent;">
+          <a href="#products" class="cta-outline inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-2 font-heading font-semibold rounded-small" style="min-height:62px;padding:0 28px;font-size:15px;letter-spacing:-0.01em;color:#1f3bb4;border:1.5px solid rgba(31,59,180,0.22);background:transparent;">
             See All Products
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
 
@@ -644,6 +671,21 @@ tailwind.config = {
           <span class="font-heading font-black text-[16px]" style="letter-spacing:-0.02em;color:#0a1628;">BHAKTI</span>
         </div>
         <p class="font-normal" style="font-size:13px;line-height:1.9;color:#b0bec8;">India's premier exporter of printer consumables. Serving global markets with integrity and quality.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <div
+            class="trust-seal-im footer-trust inline-flex"
+            role="button"
+            tabindex="0"
+            aria-label="Verify IndiaMart Trust Seal on IndiaMart"
+            onclick="trustSealIndiaMartClick(event)"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();trustSealIndiaMartClick(event);}"
+          >
+            <img src="trust-seal.png" width="96" height="96" alt="IndiaMart Trust Seal" decoding="async" />
+          </div>
+          <div class="one-star-emblem footer-one-star" role="img" aria-label="1 Star Export House, recognised by Government of India">
+            <img src="onestar.png" width="96" height="96" alt="" decoding="async" />
+          </div>
+        </div>
       </div>
       <div>
         <h4 class="font-heading font-black text-xs mb-7 uppercase tracking-wider" style="color:#0a1628;">Products</h4>
@@ -696,19 +738,23 @@ tailwind.config = {
   </div>
 </footer>
 
-<!-- WhatsApp -->
-<div class="wa-tooltip" id="wa-tooltip">👋 Chat with our Export Manager</div>
-<a href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20bulk%20pricing%20for%20printer%20consumables." class="wa-btn" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-  <div class="wa-icon-wrap">
-    <div class="wa-ping"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24" fill="white" style="position:relative;z-index:1;">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </div>
-  <span class="wa-text">Chat with Export Manager</span>
-</a>
-
 <script>
+  function trustSealIndiaMartClick(ev) {
+    if (ev && typeof ev.preventDefault === 'function') ev.preventDefault();
+    var u = 'https://trustseal.indiamart.com/members/bhaktienterprisesonline';
+    if (typeof openchildts1 === 'function') {
+      openchildts1(u);
+    } else {
+      window.open(u, '_blank', 'noopener,noreferrer');
+    }
+    if (typeof _gaq !== 'undefined' && _gaq.push) {
+      try { _gaq.push(['b._trackEvent', 'Body', 'Trustseal', 'd0073']); } catch (e) {}
+    }
+    if (typeof recEvent === 'function') {
+      try { recEvent('Body', 'Trustseal', 'd0073'); } catch (e) {}
+    }
+  }
+
   const nav = document.getElementById('main-nav');
   const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 40); };
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -718,15 +764,6 @@ tailwind.config = {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.05 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  const waBtn = document.getElementById('wa-btn');
-  const waTooltip = document.getElementById('wa-tooltip');
-  let tooltipTimer;
-  const showTip = () => waTooltip.classList.add('show');
-  const hideTip = () => waTooltip.classList.remove('show');
-  setTimeout(() => { showTip(); tooltipTimer = setTimeout(hideTip, 4500); }, 3200);
-  waBtn.addEventListener('mouseenter', () => { clearTimeout(tooltipTimer); showTip(); });
-  waBtn.addEventListener('mouseleave', () => { tooltipTimer = setTimeout(hideTip, 900); });
 </script>
 </body>
 </html>
